@@ -49,6 +49,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLon
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
+
+
         //request location permission with a dialogue
         getLocationPermission()
 
@@ -162,6 +164,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLon
             MainActivity.places.add(address)
             MainActivity.locations.add(it)
             MainActivity.adapter.notifyDataSetChanged()
+
+            MainActivity.saveLists()
+
             Toast
                     .makeText(this, "Location Saved", Toast.LENGTH_SHORT)
                     .show()
@@ -215,9 +220,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLon
 
     }
 
-    /* Request location permission, so that we can get the location of the
-       device. The result of the permission request is handled by a callback,
-       onRequestPermissionsResult */
+    /*Request location permission, so that we can get the location of the
+      device. The result of the permission request is handled by a callback,
+      onRequestPermissionsResult */
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
