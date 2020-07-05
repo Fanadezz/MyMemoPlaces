@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MyMemoPlaces</string>
+    <string name="add_button_text">Add Places ....</string>
+    <string name="clear_button_text">Clear All ...</string>
+    <string name="title_activity_maps">Map</string>
+</resources>
